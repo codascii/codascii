@@ -19,3 +19,5 @@
 /web/sass/.sass-cache/
 /web/sass/bootstrap/*
 !/web/sass/bootstrap/_variables.scss
+/web/favicon.png
+/web/logo.png
