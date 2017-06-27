@@ -1,0 +1,13 @@
+header{
+	ul{
+		li{
+			a{
+				color: $bf-color-primary;
+
+				&:hover{
+					color: #f2f2f2;
+				}
+			}
+		}
+	}
+}
