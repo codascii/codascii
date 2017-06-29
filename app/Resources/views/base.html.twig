@@ -12,29 +12,37 @@
         {% endblock %}
     </head>
     <body>
-        <header class="container-fluid bg-primary">
-            <nav class="container navbar" role="navigation">
+        <header class="container-fluid">
+            <nav class="container">
                 <div class="row">
-                    <div class="col-lg-1">
-                        <img src="{{ asset('logo.png') }}" class="img-responsive" id="logo"/>
+                    <div class="col-lg-2">
+                        <img src="{{ asset('logo.png') }}" id="logo" alt="Logo Codascii" class="img-responsive">
                     </div>
-                    <div class="col-lg-6 col-lg-offset-5">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#">ACCUEIL</a></li>
-                            <li><a href="#">A PROPOS DE NOUS</a></li>
-                            <li><a href="#">AIDE</a></li>
-                            <li><a href="#">CONTACT</a></li>
-                            <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-search"></span></a></li>
+                    <div class="col-lg-6 col-lg-offset-4">
+                        <ul>
+                            <li><a href="javascript:void(0)">ACCUEIL</a></li>
+                            <li><a href="javascript:void(0)">CONNEXION</a></li>
+                            <li><a href="javascript:void(0)">INSCRIPTION</a></li>
+                            <li><a href="javascript:void(0)">CONTACT</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
+        <div id="header-next" class="container-fluid">
+            <div class="container">
+                <form>
+                    <span class="glyphicon glyphicon-search"></span>
+                    <input type="search" name="q" placeholder="Recherche" />
+                </form>
+            </div>
+        </div>
+
         <div class="container-fluid">
             {% block body %}
             {% endblock %}
         </div>
-        <footer class="container-fluid">
+        <!-- <footer class="container-fluid">
             <div class="container">
                 <div class="row">
                     <ul class="col-lg-3">
@@ -46,7 +54,7 @@
                     <ul class="col-lg-3"><li>1234567890</li></ul>
                 </div>
             </div>
-        </footer>
+        </footer> -->
         {% block javascripts %}
         {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
