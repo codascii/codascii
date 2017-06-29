@@ -1,13 +1,82 @@
 header{
-	ul{
-		li{
-			a{
-				color: $bf-color-primary;
+	background-color: $gray-darker;
 
-				&:hover{
-					color: #f2f2f2;
+	nav{
+		img{
+			margin-top: 8px;
+		}
+
+		ul{
+			margin: 0px;
+			padding: 0px;
+			text-align: right;
+			font-family: 'Lucida Console', 'Arial Black', serif, cursive;
+			font-size: 1.1em;
+
+			li{
+				list-style-type: none;
+				display: inline-block;
+
+				a{
+					display: inline-block;
+					padding: 20px;
+					color: $gray;
+					font-weight: bold;
+
+					&:hover, &:focus{
+						color: $brand-primary;
+						text-decoration: none;
+					}
 				}
 			}
 		}
 	}
 }
+
+div#header-next{
+	background-color: darken($brand-primary, 10%);
+
+	form{
+		position: relative;
+
+		span.glyphicon{
+			display: inline-block;
+			color: $gray;
+			position: absolute;
+			left: 0px;
+			top: 8px;
+			padding: 0px 7px;
+			border-right: 1px solid $gray;
+		}
+
+		input[type=search]{
+			width: 200px;
+			color: $gray-lighter;
+			background-color: darken($brand-primary, 12%);
+			border: 1px solid darken($brand-primary, 15%);
+			border-radius: 12px;
+			margin: 3px 0px;
+			padding-left: 33px;
+
+			&:focus{
+				outline: none;
+				width: 300px;
+				transition: .2s;
+			}
+		}
+	}
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    $gray-lighter;
+    font-style: italic;
+}
+::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    $gray-lighter;
+    font-style: italic;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    $gray-lighter;
+    font-style: italic;
+}
+
