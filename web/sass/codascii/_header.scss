@@ -26,6 +26,7 @@ header{
 					&:hover, &:focus{
 						color: $brand-primary;
 						text-decoration: none;
+						transition: .2s;
 					}
 				}
 			}

@@ -4,7 +4,6 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" />
-        <link rel="help" href="/help" />
         <title>{% block title %}Codascii{% endblock %}</title>
         {% block stylesheets %}
         {# On charge le CSS de bootstrap depuis le site directement #}
@@ -20,10 +19,10 @@
                     </div>
                     <div class="col-lg-6 col-lg-offset-4">
                         <ul>
-                            <li><a href="javascript:void(0)">ACCUEIL</a></li>
-                            <li><a href="javascript:void(0)">CONNEXION</a></li>
-                            <li><a href="javascript:void(0)">INSCRIPTION</a></li>
-                            <li><a href="javascript:void(0)">CONTACT</a></li>
+                            <li><a href="{{ path('codascii_homepage') }}">ACCUEIL</a></li>
+                            <li><a href="{{ path('codascii_login') }}">CONNEXION</a></li>
+                            <li><a href="{{ path('codascii_register') }}">INSCRIPTION</a></li>
+                            <li><a href="{{ path('codascii_contact') }}">CONTACT</a></li>
                         </ul>
                     </div>
                 </div>
@@ -31,7 +30,7 @@
         </header>
         <div id="header-next" class="container-fluid">
             <div class="container">
-                <form>
+                <form method="get" action="{{ path('codascii_search') }}">
                     <span class="glyphicon glyphicon-search"></span>
                     <input type="search" name="q" placeholder="Recherche" />
                 </form>
