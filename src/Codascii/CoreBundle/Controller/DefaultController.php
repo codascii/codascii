@@ -23,7 +23,7 @@ class DefaultController extends Controller
 
     public function contactAction()
     {
-    	return $this->render('CodasciiCoreBundle:Default:contac.html.twig');
+    	return $this->render('CodasciiCoreBundle:Default:contact.html.twig');
     }
 
     public function searchAction()
