@@ -1,3 +1,7 @@
+codascii_article:
+    resource: "@CodasciiArticleBundle/Resources/config/routing.yml"
+    prefix:   /article
+
 codascii_core:
     resource: "@CodasciiCoreBundle/Resources/config/routing.yml"
     prefix:   /
