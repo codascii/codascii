@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Codascii\CoreBundle\CodasciiCoreBundle(),
             new Codascii\ArticleBundle\CodasciiArticleBundle(),
+            new Codascii\TutoBundle\CodasciiTutoBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

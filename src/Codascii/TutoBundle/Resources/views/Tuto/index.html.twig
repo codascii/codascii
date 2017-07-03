@@ -1,0 +1,17 @@
+{% extends "CodasciiCoreBundle::base.html.twig" %}
+
+{% block title %} Tutoriels - {{ parent() }}{% endblock %}
+
+{% block body %}
+<div class="container">
+	<h1>Tutoriels</h1>
+	<div class="row">
+	{% for language in languages %}
+		<div class="col-lg-3">
+			<p>{{ language.name|upper }}</p>
+			<img src="{{ asset('images/languages/'~language.imageLanguageName) }}" class="img-responsive"/>
+		</div>
+	{% endfor %}
+	</div>
+</div>
+{% endblock %}

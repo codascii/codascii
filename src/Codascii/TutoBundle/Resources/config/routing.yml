@@ -1,0 +1,18 @@
+codascii_home_tuto:
+    path:     /
+    defaults:
+        _controller: CodasciiTutoBundle:Tuto:index
+        
+codascii_all_tuto:
+    path:     /{language}
+    defaults: 
+        _controller: CodasciiTutoBundle:Tuto:allTuto
+    requirements:
+        language: html-css|cpp|php|javascript
+
+codascii_tuto:
+    path:     /{language}/{tutoNumber}/{title}
+    defaults: { _controller: CodasciiTutoBundle:Tuto:tuto }
+    requirements:
+        language: html-css|cpp|php|javascript
+        tutoNumber: \d+

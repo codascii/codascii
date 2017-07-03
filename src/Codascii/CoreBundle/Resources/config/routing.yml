@@ -1,21 +1,21 @@
 codascii_homepage:
     path:     /
-    defaults: { _controller: CodasciiCoreBundle:Default:index }
+    defaults: { _controller: CodasciiCoreBundle:Core:index }
 
 codascii_login:
     path:     /login
-    defaults: { _controller: CodasciiCoreBundle:Default:login }
+    defaults: { _controller: CodasciiCoreBundle:Core:login }
 
 codascii_register:
     path:     /register
-    defaults: { _controller: CodasciiCoreBundle:Default:register }
+    defaults: { _controller: CodasciiCoreBundle:Core:register }
 
 codascii_contact:
     path:     /contact
-    defaults: { _controller: CodasciiCoreBundle:Default:contact }
+    defaults: { _controller: CodasciiCoreBundle:Core:contact }
 
 codascii_search:
     path:     /search
-    defaults: { _controller: CodasciiCoreBundle:Default:search }
+    defaults: { _controller: CodasciiCoreBundle:Core:search }
 
 
