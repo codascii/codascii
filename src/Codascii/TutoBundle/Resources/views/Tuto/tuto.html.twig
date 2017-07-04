@@ -1,1 +1,31 @@
-ICI UN TUTO EN PARTICULIER
+{% extends "CodasciiTutoBundle::layout.html.twig" %}
+
+{% block titre %}
+    {{ language|upper }} - #{{ numero }} &middot; {{ slug }}
+{% endblock %}
+
+{% block body_tutoriels %}
+	<div class="row">
+		
+	</div>
+{% endblock %}
+
+{% block right_block %}
+    <div class="panel panel-primary">
+    	<div class="panel-heading"><h3 class="panel-title">Tous les tutoriels {{ language }}</h3></div>
+    	<div class="panel-body">
+			<p><a href="">tout les tuto de ce language ici !!!</a></p>
+			<p><a href="">tout les tuto de ce language ici !!!</a></p>
+			<p><a href="">tout les tuto de ce language ici !!!</a></p>
+			<p><a href="">tout les tuto de ce language ici !!!</a></p>
+			<p><a href="">tout les tuto de ce language ici !!!</a></p>
+			<p><a href="">tout les tuto de ce language ici !!!</a></p>
+			<p><a href="">tout les tuto de ce language ici !!!</a></p>
+			<p><a href="">tout les tuto de ce language ici !!!</a></p>
+			<p><a href="">tout les tuto de ce language ici !!!</a></p>
+			<p><a href="">tout les tuto de ce language ici !!!</a></p>
+			<p><a href="">tout les tuto de ce language ici !!!</a></p>
+			<p><a href="">tout les tuto de ce language ici !!!</a></p>
+    	</div>
+    </div>
+{% endblock %}

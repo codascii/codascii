@@ -11,7 +11,7 @@ codascii_all_tuto:
         language: html-css|cpp|php|javascript|jquery
 
 codascii_tuto:
-    path:     /{language}/{tutoNumber}/{title}
+    path:     /{language}/{tutoNumber}/{slug}
     defaults: { _controller: CodasciiTutoBundle:Tuto:tuto }
     requirements:
         language: html-css|cpp|php|javascript|jquery

@@ -20,13 +20,14 @@ class TutoController extends Controller
 		return $this->render('CodasciiTutoBundle:Tuto:index.html.twig', array('languages'=>$languages));
 	}
 
-    public function allTutoAction()
+    public function allTutoAction(string $language)
     {
-        return $this->render('CodasciiTutoBundle:Tuto:allTuto.html.twig');
+        return $this->render('CodasciiTutoBundle:Tuto:allTuto.html.twig', array('language'=>$language));
     }
 
-    public function tutoAction()
+    public function tutoAction(string $language, int $tutoNumber, string $slug)
     {
-        return $this->render('CodasciiTutoBundle:Tuto:tuto.html.twig');
+        return $this->render('CodasciiTutoBundle:Tuto:tuto.html.twig', 
+            array('language'=>$language, 'numero'=>$tutoNumber, 'slug'=>$slug));
     }
 }
