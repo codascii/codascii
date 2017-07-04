@@ -11,8 +11,12 @@ codascii_all_tuto:
         language: html-css|cpp|php|javascript|jquery
 
 codascii_tuto:
-    path:     /{language}/{tutoNumber}/{slug}
+    path:     /{language}/{number}/{slug}
     defaults: { _controller: CodasciiTutoBundle:Tuto:tuto }
     requirements:
         language: html-css|cpp|php|javascript|jquery
         tutoNumber: \d+
+
+codascii_tuto_add:
+    path:     /add
+    defaults: { _controller: CodasciiTutoBundle:Tuto:add }

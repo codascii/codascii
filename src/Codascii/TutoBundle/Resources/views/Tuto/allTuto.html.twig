@@ -1,5 +1,7 @@
 {% extends "CodasciiTutoBundle::layout.html.twig" %}
 
+{% block title %} Tutoriels &middot; {{ language|upper }}{% endblock %}
+
 {% block titre %}
     {{ parent() }} : {{ language|upper }}
 {% endblock %}
@@ -11,21 +13,12 @@
 {% endblock %}
 
 {% block right_block %}
-    <div class="panel panel-primary">
+    <div class="panel panel-info">
     	<div class="panel-heading"><h3 class="panel-title">Tous les tutoriels {{ language }}</h3></div>
     	<div class="panel-body">
-			<p><a href="">tout les tuto de ce language ici !!!</a></p>
-			<p><a href="">tout les tuto de ce language ici !!!</a></p>
-			<p><a href="">tout les tuto de ce language ici !!!</a></p>
-			<p><a href="">tout les tuto de ce language ici !!!</a></p>
-			<p><a href="">tout les tuto de ce language ici !!!</a></p>
-			<p><a href="">tout les tuto de ce language ici !!!</a></p>
-			<p><a href="">tout les tuto de ce language ici !!!</a></p>
-			<p><a href="">tout les tuto de ce language ici !!!</a></p>
-			<p><a href="">tout les tuto de ce language ici !!!</a></p>
-			<p><a href="">tout les tuto de ce language ici !!!</a></p>
-			<p><a href="">tout les tuto de ce language ici !!!</a></p>
-			<p><a href="">tout les tuto de ce language ici !!!</a></p>
+    	{% for tutoriel in tutoriels %}
+    	    <p><a href="{{ path('codascii_tuto', {'language': language, 'number': tutoriel.number, 'slug': tutoriel.getSlug }) }}">{{ "#" ~ tutoriel.number ~ " - " ~ tutoriel.title }}</a></p>
+    	{% endfor %}
     	</div>
     </div>
 {% endblock %}

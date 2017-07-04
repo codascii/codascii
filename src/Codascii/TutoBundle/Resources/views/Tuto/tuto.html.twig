@@ -1,7 +1,11 @@
 {% extends "CodasciiTutoBundle::layout.html.twig" %}
 
+{% block title %}
+	{{ language|upper ~ " - #" ~ numero ~ " " ~ title }}
+{% endblock %}
+
 {% block titre %}
-    {{ language|upper }} - #{{ numero }} &middot; {{ slug }}
+    {{ language|upper ~ " - #" ~ numero ~ " " ~ title }}
 {% endblock %}
 
 {% block body_tutoriels %}

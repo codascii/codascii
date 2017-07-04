@@ -3,6 +3,7 @@
 namespace Codascii\TutoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use \Codascii\TutoBundle\Entity\Language;
 
 /**
  * Tutoriel
@@ -42,13 +43,29 @@ class Tutoriel
      */
     private $content;
 
+    /**
+     * @ORM\Column(name="date", type="datetime")
+     */
+    private $date;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Codascii\TutoBundle\Entity\Language")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $language;
+
+
+    public function __construct()
+    {
+        $this->date = new \Datetime();
+    }
 
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
+    public function getId() : int
     {
         return $this->id;
     }
@@ -60,7 +77,7 @@ class Tutoriel
      *
      * @return Tutoriel
      */
-    public function setNumber($number)
+    public function setNumber(int $number) : Tutoriel
     {
         $this->number = $number;
 
@@ -72,7 +89,7 @@ class Tutoriel
      *
      * @return int
      */
-    public function getNumber()
+    public function getNumber() : int
     {
         return $this->number;
     }
@@ -84,7 +101,7 @@ class Tutoriel
      *
      * @return Tutoriel
      */
-    public function setTitle($title)
+    public function setTitle(string $title) : Tutoriel
     {
         $this->title = $title;
 
@@ -96,9 +113,14 @@ class Tutoriel
      *
      * @return string
      */
-    public function getTitle()
+    public function getTitle() : string
     {
         return $this->title;
+    }
+
+    public function getSlug() : string
+    {
+        return \strtolower(\str_replace(" ", "-", $this->getTitle()));
     }
 
     /**
@@ -108,7 +130,7 @@ class Tutoriel
      *
      * @return Tutoriel
      */
-    public function setContent($content)
+    public function setContent(string $content) : Tutoriel
     {
         $this->content = $content;
 
@@ -120,9 +142,56 @@ class Tutoriel
      *
      * @return string
      */
-    public function getContent()
+    public function getContent() : string
     {
         return $this->content;
     }
-}
 
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Tutoriel
+     */
+    public function setDate(\DateTime $date) : Tutoriel
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate() : \DateTime
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set language
+     *
+     * @param \Codascii\TutoBundle\Entity\Language $language
+     *
+     * @return Tutoriel
+     */
+    public function setLanguage(Language $language) : Tutoriel
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return \Codascii\TutoBundle\Entity\Language
+     */
+    public function getLanguage() : Language
+    {
+        return $this->language;
+    }
+}
