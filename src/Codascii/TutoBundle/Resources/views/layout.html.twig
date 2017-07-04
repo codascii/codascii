@@ -1,0 +1,17 @@
+{% extends "CodasciiCoreBundle::base.html.twig" %}
+
+{% block title %} Tutoriels - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+    	<div class="col-lg-9">
+    		<h1>Tutoriels</h1><hr/>
+    		{% block body_tutoriels %}
+    		    
+    		{% endblock %}
+    	</div>
+    	<div class="col-lg-3">
+    		
+    	</div>
+    </div>
+{% endblock %}
