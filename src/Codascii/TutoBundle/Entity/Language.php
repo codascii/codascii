@@ -3,6 +3,7 @@
 namespace Codascii\TutoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use \Codascii\TutoBundle\Entity\LanguageImage;
 
 /**
  * Language
@@ -31,16 +32,15 @@ class Language
     /**
      * @var string
      *
-     * @ORM\Column(name="image_language_name", type="string", length=255, unique=true)
-     */
-    private $image_language_name;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="short_description", type="string", length=255, unique=true)
      */
     private $short_description;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Codascii\TutoBundle\Entity\LanguageImage", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $language_image;
 
 
     /**
@@ -102,26 +102,26 @@ class Language
     }
 
     /**
-     * Set imageLanguageName
+     * Set languageImage
      *
-     * @param string $imageLanguageName
+     * @param \Codascii\TutoBundle\Entity\LanguageImage $languageImage
      *
      * @return Language
      */
-    public function setImageLanguageName(string $imageLanguageName) : Language
+    public function setLanguageImage(LanguageImage $languageImage) : Language
     {
-        $this->image_language_name = $imageLanguageName;
+        $this->language_image = $languageImage;
 
         return $this;
     }
 
     /**
-     * Get imageLanguageName
+     * Get languageImage
      *
-     * @return string
+     * @return \Codascii\TutoBundle\Entity\LanguageImage
      */
-    public function getImageLanguageName() : string
+    public function getLanguageImage() : LanguageImage
     {
-        return $this->image_language_name;
+        return $this->language_image;
     }
 }

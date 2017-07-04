@@ -8,11 +8,11 @@ codascii_all_tuto:
     defaults: 
         _controller: CodasciiTutoBundle:Tuto:allTuto
     requirements:
-        language: html-css|cpp|php|javascript
+        language: html-css|cpp|php|javascript|jquery
 
 codascii_tuto:
     path:     /{language}/{tutoNumber}/{title}
     defaults: { _controller: CodasciiTutoBundle:Tuto:tuto }
     requirements:
-        language: html-css|cpp|php|javascript
+        language: html-css|cpp|php|javascript|jquery
         tutoNumber: \d+

@@ -9,7 +9,8 @@
 	{% for language in languages %}
 		<div class="col-lg-3">
 			<p>{{ language.name|upper }}</p>
-			<img src="{{ asset('images/languages/'~language.imageLanguageName) }}" class="img-responsive"/>
+			<img src="{{ asset('images/languages/'~language.languageImage.name) }}" alt="{{language.languageImage.alt}}" class="img-responsive"/>
+			<a href="{{ path('codascii_home_tuto')~language.name }}">language.name</a>
 		</div>
 	{% endfor %}
 	</div>
