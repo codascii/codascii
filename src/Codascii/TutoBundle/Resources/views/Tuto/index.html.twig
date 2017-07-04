@@ -4,9 +4,10 @@
 	<div class="row">
 		{% for language in languages %}
 			<div class="col-lg-4 tutoriel">
-				<p>{{ language.name|upper }}</p>
-				<img src="{{ asset('images/languages/'~language.languageImage.name) }}" alt="{{language.languageImage.alt}}" class="img-responsive"/>
-				<a href="{{ path('codascii_home_tuto')~language.name }}">{{language.name}}</a>
+				<a href="{{ path('codascii_home_tuto')~language.name }}">
+					<h3>{{ language.name|upper }}</h3>
+					<img src="{{ asset('images/languages/'~language.languageImage.name) }}" alt="{{language.languageImage.alt}}" class="img-responsive"/>
+				</a>
 			</div>
 		{% endfor %}
 	</div>
