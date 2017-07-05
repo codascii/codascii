@@ -7,9 +7,24 @@
 				<a href="{{ path('codascii_home_tuto')~language.name }}">
 					<h3>{{ language.name|upper }}</h3>
 					<img src="{{ asset('images/languages/'~language.languageImage.name) }}" alt="{{language.languageImage.alt}}" class="img-responsive"/>
-					language.shortDescription
+					{{ language.shortDescription }}
 				</a>
 			</div>
 		{% endfor %}
 	</div>
+{% endblock %}
+
+{% block right_block %}
+	{% for language in languages %}
+		<div class="block">
+			<div class="block-heading">
+				<h4>{{ language.name|upper }}</h4>
+			</div>
+			<div class="list-group">
+				<p class="list-group-item"><a href="">Test</a></p>
+				<p class="list-group-item"><a href="">Test</a></p>
+				<p class="list-group-item"><a href="">Test</a></p>
+			</div>
+		</div>
+	{% endfor %}
 {% endblock %}

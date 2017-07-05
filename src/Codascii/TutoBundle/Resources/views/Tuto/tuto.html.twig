@@ -1,42 +1,31 @@
 {% extends "CodasciiTutoBundle::layout.html.twig" %}
 
 {% block title %}
-	{{ language|upper ~ " - #" ~ numero ~ " " ~ title }}
+	{{ language|upper ~ " - #" ~ tutoriel[0].number ~ " " ~ title }}
 {% endblock %}
 
 {% block breadcrumb %}
-    <li><a href="{{ path('codascii_homepage') }}">Accueil</a></li>
+    <li><a href="{{ path('codascii_homepage') }}"><span class="glyphicon glyphicon-home"></span>&nbsp; Accueil</a></li>
     <li><a href="{{ path('codascii_home_tuto') }}">Tutoriels</a></li>
     <li><a href="{{ path('codascii_all_tuto', {'language': language}) }}">{{ language[:1]|upper ~ language[1:] }}</a></li>
-    <li class="active"><a href="{{ path('codascii_tuto', {'language': language, 'number': numero, 'slug': slug }) }}">{{ "#" ~ numero ~ " " ~ title }}</a></li>
+    <li class="active"><a href="{{ path('codascii_tuto', {'language': language, 'number': tutoriel[0].number, 'slug': slug }) }}">{{ "#" ~ tutoriel[0].number ~ " " ~ title }}</a></li>
 {% endblock %}
 
 {% block titre %}
-    {{ language|upper ~ " - #" ~ numero ~ " " ~ title }}
+    {{ language|upper ~ " - #" ~ tutoriel[0].number ~ " " ~ title }}
 {% endblock %}
 
 {% block body_tutoriels %}
-	<div class="row">
-		
-	</div>
+	<p>{{ tutoriel[0].content }}</p>
 {% endblock %}
 
 {% block right_block %}
     <div class="panel panel-info">
     	<div class="panel-heading"><h3 class="panel-title">Tous les tutoriels {{ language }}</h3></div>
     	<div class="list-group">
-			<a href="" class="list-group-item">tout les tuto de ce language ici !!!</a>
-			<a href="" class="list-group-item">tout les tuto de ce language ici !!!</a>
-			<a href="" class="list-group-item">tout les tuto de ce language ici !!!</a>
-			<a href="" class="list-group-item">tout les tuto de ce language ici !!!</a>
-			<a href="" class="list-group-item">tout les tuto de ce language ici !!!</a>
-			<a href="" class="list-group-item">tout les tuto de ce language ici !!!</a>
-			<a href="" class="list-group-item">tout les tuto de ce language ici !!!</a>
-			<a href="" class="list-group-item">tout les tuto de ce language ici !!!</a>
-			<a href="" class="list-group-item">tout les tuto de ce language ici !!!</a>
-			<a href="" class="list-group-item">tout les tuto de ce language ici !!!</a>
-			<a href="" class="list-group-item">tout les tuto de ce language ici !!!</a>
-			<a href="" class="list-group-item">tout les tuto de ce language ici !!!</a>
+		{% for tutoriel in tutoriels %}
+    	    <a href="{{ path('codascii_tuto', {'language': language, 'number': tutoriel.number, 'slug': tutoriel.getSlug }) }}" class="list-group-item">{{ "#" ~ tutoriel.number ~ " - " ~ tutoriel.title }}</a>
+    	{% endfor %}
     	</div>
     </div>
 {% endblock %}

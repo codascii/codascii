@@ -40,8 +40,26 @@ class TutoController extends Controller
     public function tutoAction(string $language, int $number, string $slug)
     {
         $title = ucfirst(str_replace("-", " ", $slug));
+
+        //  Récupération de l'entity manager
+        $em = $this->getDoctrine()->getManager();
+
+        // On récupère le language grâce à son nom
+        $languageEntiy = $em->getRepository('CodasciiTutoBundle:Language')->findBy(array('name'=>$language));
+
+        // On récupère la liste des tutoriels de ce language
+        $tutoriels = $em->getRepository('CodasciiTutoBundle:Tutoriel')->findBy(
+            array('language' => $languageEntiy[0]));
+
+        //  Récupération de l'entity manager
+        $em = $this->getDoctrine()->getManager();
+
+        // On récupère la liste des tutoriels de ce language
+        $tutoriel = $em->getRepository('CodasciiTutoBundle:Tutoriel')->findBy(
+            array('title' => $title));
+        
         return $this->render('CodasciiTutoBundle:Tuto:tuto.html.twig', 
-            array('language'=>$language, 'numero'=>$number, 'title'=>$title, 'slug'=>$slug));
+            array('language'=>$language, 'title'=>$title, 'slug'=>$slug, 'tutoriel'=>$tutoriel, 'tutoriels'=>$tutoriels));
     }
 
     public function addAction()

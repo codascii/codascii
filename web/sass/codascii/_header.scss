@@ -41,6 +41,12 @@ header{
 div#header-next{
 	background-color: $gray;
 
+	ul{
+		margin: 0px;
+	}
+
+	span{ color: $breadcrumb-color; }
+
 	form{
 		position: relative;
 
