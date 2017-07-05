@@ -20,8 +20,10 @@
 {% endblock %}
 
 {% block right_block %}
-    <div class="panel panel-info">
-    	<div class="panel-heading"><h3 class="panel-title">Tous les tutoriels {{ language }}</h3></div>
+    <div class="block">
+    	<div class="block-heading">
+            <h4>Tous les tutoriels {{ language }}</h4>
+        </div>
     	<div class="list-group">
 		{% for tutoriel in tutoriels %}
     	    <a href="{{ path('codascii_tuto', {'language': language, 'number': tutoriel.number, 'slug': tutoriel.getSlug }) }}" class="list-group-item">{{ "#" ~ tutoriel.number ~ " - " ~ tutoriel.title }}</a>
