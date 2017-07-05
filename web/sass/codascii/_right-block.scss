@@ -1,0 +1,27 @@
+.right-block{
+
+	.block{
+		margin-bottom: 20px;
+
+		.block-heading{
+			background-color: $block-heading-bg;
+			color: white;
+			text-align: center;
+			padding: 4px 0px;
+			border-left: 1px solid $block-heading-bg;
+			border-right: 1px solid $block-heading-bg;
+
+			*{
+				margin: 0px;
+			}
+		}
+
+		.block-body{
+			padding: 3px;
+		}
+	}
+
+	.list-group-item{
+		color: darken($brand-primary, 10%);
+	}
+}

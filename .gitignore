@@ -16,7 +16,8 @@
 /web/bundles/
 /web/css/
 /web/fonts/
-/web/sass/
+/web/sass/*
+!/web/sass/codascii/
 !/web/_bootstrap.scss
 /web/sass/.sass-cache/
 /web/sass/bootstrap/*
