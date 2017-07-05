@@ -22,4 +22,5 @@
 /web/sass/bootstrap/*
 !/web/sass/bootstrap/_variables.scss
 /web/favicon.png
+/web/logo-xs.png
 /web/logo.png

@@ -17,18 +17,26 @@
         <header class="container-fluid nav navbar-inverse">
             <nav class="container">
                 <div class="row">
-                    <div class="col-lg-2">
+                    <div class="col-lg-2 col-md-2 hidden-sm">
                         <a href="{{ path('codascii_homepage') }}" title="Aller à la page d'accueil">
-                            <img src="{{ asset('logo.png') }}" id="logo" alt="Logo Codascii" class="img-responsive">
+                            <img src="{{ asset('logo.png') }}" id="logo" alt="Logo Codascii" class="img-responsive hidden-xs">
+                            <img src="{{ asset('logo-xs.png') }}" id="logo-xs" alt="Logo Codascii" class="visible-xs">
                         </a>
                     </div>
-                    <div class="col-lg-6 col-lg-offset-4">
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="clearfix visible-xs"></div>
+                    <div class="col-lg-6 col-lg-offset-4 col-md-7 col-md-offset-3 col-sm-9 col-xs12 collapse navbar-collapse" id="menu">
                         <ul class="nav navbar-nav">
+                            <li class="visible-sm"><a href="javascript:void(0)" id="search"><span class="glyphicon glyphicon-search"></span></a></li>
                             <li><a href="{{ path('codascii_homepage') }}">ACCUEIL</a></li>
                             <li><a href="{{ path('codascii_login') }}">CONNEXION</a></li>
                             <li><a href="{{ path('codascii_register') }}">INSCRIPTION</a></li>
                             <li><a href="{{ path('codascii_contact') }}">CONTACT</a></li>
-                            <li><a href="javascript:void(0)" id="search"><span class="glyphicon glyphicon-search"></span></a></li>
+                            <li class="hidden-sm"><a href="javascript:void(0)" id="search"><span class="glyphicon glyphicon-search"></span></a></li>
                         </ul>
                     </div>
                 </div>
