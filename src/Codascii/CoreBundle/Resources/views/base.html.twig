@@ -14,7 +14,7 @@
         {% endblock %}
     </head>
     <body>
-        <header class="container-fluid">
+        <header class="container-fluid nav navbar-inverse">
             <nav class="container">
                 <div class="row">
                     <div class="col-lg-2">
@@ -23,24 +23,25 @@
                         </a>
                     </div>
                     <div class="col-lg-6 col-lg-offset-4">
-                        <ul>
+                        <ul class="nav navbar-nav">
                             <li><a href="{{ path('codascii_homepage') }}">ACCUEIL</a></li>
                             <li><a href="{{ path('codascii_login') }}">CONNEXION</a></li>
                             <li><a href="{{ path('codascii_register') }}">INSCRIPTION</a></li>
                             <li><a href="{{ path('codascii_contact') }}">CONTACT</a></li>
+                            <li><a href="javascript:void(0)" id="search"><span class="glyphicon glyphicon-search"></span></a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
-        <div id="header-next" class="container-fluid">
+        <!-- <div id="header-next" class="container-fluid">
             <div class="container">
                 <form method="get" action="{{ path('codascii_search') }}">
                     <span class="glyphicon glyphicon-search"></span>
                     <input type="search" name="q" placeholder="Recherche" />
                 </form>
             </div>
-        </div>
+        </div> -->
 
         <div class="container-fluid">
             {% block body %}

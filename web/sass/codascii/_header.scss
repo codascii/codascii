@@ -1,9 +1,7 @@
 header{
-	background-color: $gray-darker;
-
 	nav{
 		img{
-			margin-top: 8px;
+			margin-top: 2px;
 		}
 
 		ul{
@@ -28,6 +26,13 @@ header{
 						text-decoration: none;
 						transition: .2s;
 					}
+					
+				}
+
+				#search{
+					background-color: $gray !important;
+					padding-top: -1px !important;
+					color: white;
 				}
 			}
 		}

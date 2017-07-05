@@ -7,6 +7,7 @@
 				<a href="{{ path('codascii_home_tuto')~language.name }}">
 					<h3>{{ language.name|upper }}</h3>
 					<img src="{{ asset('images/languages/'~language.languageImage.name) }}" alt="{{language.languageImage.alt}}" class="img-responsive"/>
+					language.shortDescription
 				</a>
 			</div>
 		{% endfor %}
