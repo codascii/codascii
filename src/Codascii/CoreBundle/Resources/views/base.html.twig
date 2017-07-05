@@ -34,14 +34,23 @@
                 </div>
             </nav>
         </header>
-        <!-- <div id="header-next" class="container-fluid">
+        <div id="header-next" class="container-fluid">
             <div class="container">
                 <form method="get" action="{{ path('codascii_search') }}">
                     <span class="glyphicon glyphicon-search"></span>
                     <input type="search" name="q" placeholder="Recherche" />
                 </form>
             </div>
-        </div> -->
+        </div>
+        <div class="container-fluid">
+            <div class="container">
+                <ul class="breadcrumb">
+                {% block breadcrumb %}
+            
+                {% endblock %}                    
+                </ul>
+            </div>
+        </div>
 
         <div class="container-fluid">
             {% block body %}

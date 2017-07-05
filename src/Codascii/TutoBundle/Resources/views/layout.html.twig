@@ -2,9 +2,14 @@
 
 {% block title %} Tutoriels &middot; {{ parent() }}{% endblock %}
 
+{% block breadcrumb %}
+    <li><a href="{{ path('codascii_homepage') }}">Accueil</a></li>
+    <li class="active"><a href="{{ path('codascii_home_tuto') }}">Tutoriels</a></li>
+{% endblock %}
+
 {% block body %}
     <div class="container">
-    	<div class="col-lg-9">
+    	<div class="col-lg-9 block">
     		<h1>{% block titre %}Tutoriels{% endblock %}</h1><hr/>
     		{% block body_tutoriels %}
     		    

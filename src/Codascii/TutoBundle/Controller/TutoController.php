@@ -41,7 +41,7 @@ class TutoController extends Controller
     {
         $title = ucfirst(str_replace("-", " ", $slug));
         return $this->render('CodasciiTutoBundle:Tuto:tuto.html.twig', 
-            array('language'=>$language, 'numero'=>$number, 'title'=>$title));
+            array('language'=>$language, 'numero'=>$number, 'title'=>$title, 'slug'=>$slug));
     }
 
     public function addAction()

@@ -2,6 +2,12 @@
 
 {% block title %} Tutoriels &middot; {{ language|upper }}{% endblock %}
 
+{% block breadcrumb %}
+    <li><a href="{{ path('codascii_homepage') }}">Accueil</a></li>
+    <li><a href="{{ path('codascii_home_tuto') }}">Tutoriels</a></li>
+    <li class="active"><a href="{{ path('codascii_all_tuto', {'language': language}) }}">{{ language[:1]|upper ~ language[1:] }}</a></li>
+{% endblock %}
+
 {% block titre %}
     {{ parent() }} : {{ language|upper }}
 {% endblock %}
@@ -15,9 +21,9 @@
 {% block right_block %}
     <div class="panel panel-info">
     	<div class="panel-heading"><h3 class="panel-title">Tous les tutoriels {{ language }}</h3></div>
-    	<div class="panel-body">
+    	<div class="list-group">
     	{% for tutoriel in tutoriels %}
-    	    <p><a href="{{ path('codascii_tuto', {'language': language, 'number': tutoriel.number, 'slug': tutoriel.getSlug }) }}">{{ "#" ~ tutoriel.number ~ " - " ~ tutoriel.title }}</a></p>
+    	    <a href="{{ path('codascii_tuto', {'language': language, 'number': tutoriel.number, 'slug': tutoriel.getSlug }) }}" class="list-group-item">{{ "#" ~ tutoriel.number ~ " - " ~ tutoriel.title }}</a>
     	{% endfor %}
     	</div>
     </div>

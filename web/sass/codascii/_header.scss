@@ -7,7 +7,6 @@ header{
 		ul{
 			margin: 0px;
 			padding: 0px;
-			text-align: right;
 			font-family: 'Lucida Console', 'Arial Black', serif, cursive;
 			font-size: 1.1em;
 
@@ -40,7 +39,7 @@ header{
 }
 
 div#header-next{
-	background-color: darken($brand-primary, 10%);
+	background-color: $gray;
 
 	form{
 		position: relative;
