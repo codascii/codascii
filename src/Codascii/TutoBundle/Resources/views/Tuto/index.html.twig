@@ -12,16 +12,13 @@
 						<div class="left-content">
 							<img src="{{ asset('images/languages/'~language.languageImage.name) }}" alt="{{language.languageImage.alt}}" class="img-responsive"></div>
 						<div class="right-content">
-							<p>{{ language.shortDescription }}</p>
+							<p class="text-info">{{ language.shortDescription }}</p>
 						</div>
 					</div>
-					<div class="panel-footer"><a href="{{ path('codascii_home_tuto')~language.name }}">En savoir plus...</a></div>
+					<div class="panel-footer">
+						<a href="{{ path('codascii_home_tuto')~language.name }}" class="text-danger">En savoir plus...</a>
+					</div>
 				</div>
-				<!-- <a href="{{ path('codascii_home_tuto')~language.name }}">
-					<h3>{{ language.name|upper }}</h3>
-					<img src="{{ asset('images/languages/'~language.languageImage.name) }}" alt="{{language.languageImage.alt}}" class="img-responsive"/>
-					{{ language.shortDescription }}
-				</a> -->
 			</div>
 		{% endfor %}
 	</div>
