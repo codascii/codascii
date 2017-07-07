@@ -1,14 +1,27 @@
 {% extends "CodasciiTutoBundle::layout.html.twig" %}
 
 {% block body_tutoriels %}
-	<div class="row">
+	<div class="row" style="display: flex;flex-wrap:wrap">
 		{% for language in languages %}
 			<div class="col-lg-4 tutoriel">
-				<a href="{{ path('codascii_home_tuto')~language.name }}">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">{{ language.name|upper }}</h3>
+					</div>
+					<div class="panel-body">
+						<div class="left-content">
+							<img src="{{ asset('images/languages/'~language.languageImage.name) }}" alt="{{language.languageImage.alt}}" class="img-responsive"></div>
+						<div class="right-content">
+							<p>{{ language.shortDescription }}</p>
+						</div>
+					</div>
+					<div class="panel-footer"><a href="{{ path('codascii_home_tuto')~language.name }}">En savoir plus...</a></div>
+				</div>
+				<!-- <a href="{{ path('codascii_home_tuto')~language.name }}">
 					<h3>{{ language.name|upper }}</h3>
 					<img src="{{ asset('images/languages/'~language.languageImage.name) }}" alt="{{language.languageImage.alt}}" class="img-responsive"/>
 					{{ language.shortDescription }}
-				</a>
+				</a> -->
 			</div>
 		{% endfor %}
 	</div>
